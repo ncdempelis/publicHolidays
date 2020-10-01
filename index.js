@@ -18,17 +18,35 @@
 				greatSaturday: -1,
 				easterMonday: 1,
 				holySpirit:50
-			}
+			},
+			easter:'ORTHODOX'
+				
 		},
 		'UK' : {
 			currency: 'GBP', 
-			flags: {includeSaturdays: false, includeCurrency: false, includeSchool: false}}
+			flags: {includeSaturdays: false, includeCurrency: false, includeSchool: false}},
+		'EURO': {
+			currency: 'EURO',
+			flags : { includeSundays:true, includeSaturdays: true},
+			fixed : {
+				0:[1],
+				11:[25,26]
+			},
+			movable: { //relative to catholic easter
+				cleanMonday: -48,
+				greatFriday: -2,
+				easterMonday: 1
+			}, 
+			easter:'CATHOLIC'
+		}
+
 	};
 
 	for (const [key, value] of Object.entries(REGIONS)){
 		Object.freeze(key.fixed);
 		Object.freeze(key.movable);
 		Object.freeze(key.flags);
+	
 		Object.seal(key);
 	}
 	// Object.freeze(REGIONS.GR.fixed);
