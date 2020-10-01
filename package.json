@@ -1,0 +1,11 @@
+{
+  "name": "publicholidays",
+  "version": "1.0.0",
+  "description": "A utility to list public holidays or check if a date is a public holiday",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Nick Dempelis",
+  "license": "ISC"
+}
