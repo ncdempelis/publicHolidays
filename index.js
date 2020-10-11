@@ -1,5 +1,3 @@
-// (function () {
-
 const REGIONS = {
   GR: {
     currency: 'EURO',
@@ -99,15 +97,15 @@ const catholicEasterDate = (year) => {
 
   tA = tmp + 21;
 
-  if (tA === 29) tA--;
+  if (tA === 29) tA=tA-1;
   if (tA === 28 && remainder19 > 10) tA--;
 
   // find the next Sunday
   const tB = (tA - 19) % 7;
 
   tC = (40 - firstTwoDigitsOfYear) % 4;
-  if (tC === 3) tC++;
-  if (tC > 1) tC++;
+  if (tC === 3) tC+=1;
+  if (tC > 1) tC+=1;
 
   tmp = year % 100;
   const tD = (year + Math.trunc(year / 4)) % 7;
